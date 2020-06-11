@@ -21,7 +21,7 @@ let checker = item => {
 
 // Map all the item include `ssr://` and serialize those items
 let result = str.split('\n\n')
-                .filter(item => checker(item))
+                .filter(item)
                 .join('\r\n')
 
-writeSync(path.resolve(__dirname, BUILD_DIR, 'index.html'), base64(result))
+writeSync(path.resolve(__dirname, BUILD_DIR, 'index.html'), result)
